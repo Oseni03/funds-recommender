@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "apps.finances",
     "apps.notifications",
     "apps.websockets",
+    "apps.home",
     
     # External Apps 
     "channels",
@@ -172,6 +173,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "apps.home.context_processors.home",
             ],
         },
     },
@@ -265,7 +267,7 @@ LOGIN_URL = "/users/login/"
 
 RATELIMIT_IP_META_KEY = "common.utils.get_client_ip"
 
-NOTIFICATIONS_STRATEGIES = ["InAppNotificationStrategy"]
+NOTIFICATIONS_STRATEGIES = ["InAppNotificationStrategy", "EmailNotificationStrategy"]
 
 
 #-----------------------------------
@@ -329,7 +331,8 @@ DJSTRIPE_USE_NATIVE_JSONFIELD = False
 DJSTRIPE_FOREIGN_KEY_TO_FIELD = "id"
 DJSTRIPE_WEBHOOK_VALIDATION="retrieve_event" # verify_signature
 # DJSTRIPE_SUBSCRIBER_MODEL = "users.Profile"
-STRIPE_CHECKS_ENABLED = env.bool("STRIPE_CHECKS_ENABLED", default=True)
+SILENCED_SYSTEM_CHECKS = []
+STRIPE_CHECKS_ENABLED = env.bool("STRIPE_CHECKS_ENABLED", default=False)
 if not STRIPE_CHECKS_ENABLED:
     SILENCED_SYSTEM_CHECKS.append("djstripe.C001")
     
