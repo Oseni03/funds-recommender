@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "apps.notifications",
     "apps.websockets",
     "apps.home",
+    "apps.grants",
     
     # External Apps 
     "channels",
@@ -57,15 +58,15 @@ INSTALLED_APPS = [
     "storages",
     "djstripe",
     "widget_tweaks",
+    "django_htmx",
+    'django_celery_beat',
+    'django_celery_results',
     # social apps
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
-    "django_htmx",
-    'django_celery_beat',
-    'django_celery_results',
 ]
 
 
