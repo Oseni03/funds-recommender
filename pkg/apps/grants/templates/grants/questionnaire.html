@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}{{ block.super }} Questionnaire{% endblock %}
+
+{% block content %}
+<div class="container my-auto">
+    <div class="row justify-content-center">
+        <div class="col">
+            <h3 class="my-3">Questionnaire</h3>
+            <form action="" class="form-group">
+                {% csrf_token %}
+        
+                {% for field in form %}
+                {% include "users/partials/_field.html" %}
+                {% endfor %}
+                <div class="d-grid mb-3">
+                    <input type="submit" class="btn btn-dark" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
