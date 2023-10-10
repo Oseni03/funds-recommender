@@ -267,7 +267,7 @@ LOGIN_URL = "/users/login/"
 
 RATELIMIT_IP_META_KEY = "common.utils.get_client_ip"
 
-NOTIFICATIONS_STRATEGIES = ["InAppNotificationStrategy", "EmailNotificationStrategy"]
+NOTIFICATIONS_STRATEGIES = ["InAppNotificationStrategy"]
 
 
 #-----------------------------------
