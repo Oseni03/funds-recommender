@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import FormView
 
-from .forms import QuestionnaireForm
+from .forms import FundProfileForm
 
 # Create your views here.
-class QuestionnaireView(FormView):
-    form_class = QuestionnaireForm
-    template_name = "grants/questionnaire.html"
+class FundProfileView(FormView):
+    form_class = FundProfileForm
+    template_name = "grants/profile.html"

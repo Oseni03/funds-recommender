@@ -1,13 +1,13 @@
 from django import forms
-from .models import Questionnaire
+from .models import FundProfile
 
 
-class QuestionnaireForm(forms.ModelForm):
+class FundProfileForm(forms.ModelForm):
     
     class Meta:
-        model = Questionnaire 
+        model = FundProfile 
         fields = (
-            "location", "type_of_applicant", 
-            "type_of_fund", "objectives", 
-            "background"
+            "title", "location", "objectives", 
+            "fund_type", "fund_category", "eligibility", 
+            "estimated_budget", "background", "project_summary",  
         )
