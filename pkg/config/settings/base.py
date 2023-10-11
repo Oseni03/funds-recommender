@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     "apps.notifications",
     "apps.websockets",
     "apps.home",
-    "apps.grants",
+    "apps.funds",
     
     # External Apps 
     "channels",

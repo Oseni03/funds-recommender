@@ -6,4 +6,4 @@ from .forms import FundProfileForm
 # Create your views here.
 class FundProfileView(FormView):
     form_class = FundProfileForm
-    template_name = "grants/profile.html"
+    template_name = "funds/profile.html"
