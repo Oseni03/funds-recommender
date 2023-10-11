@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "djstripe",
     "widget_tweaks",
     "django_htmx",
+    "django_filters",
     'django_celery_beat',
     'django_celery_results',
     # social apps

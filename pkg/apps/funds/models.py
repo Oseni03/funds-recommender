@@ -6,7 +6,7 @@ from django.utils.text import slugify
 # Create your models here.
 class FundCategory(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(null=True)
+    slug = models.SlugField(null=True, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     
@@ -21,7 +21,7 @@ class FundCategory(models.Model):
 
 class FundType(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(null=True)
+    slug = models.SlugField(null=True, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     
@@ -36,7 +36,22 @@ class FundType(models.Model):
 
 class FundEligibility(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(null=True)
+    slug = models.SlugField(null=True, unique=True)
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.name)
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+
+class Agency(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(null=True, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     
@@ -76,11 +91,11 @@ class FundProfile(models.Model):
 
 class Fund(models.Model):
     title = models.CharField(max_length=255)
-    agency_name = models.CharField(max_length=255)
+    agency = models.ForeignKey(Agency, on_delete=models.PROTECT, related_name="funds")
     opportunity_no = models.CharField(max_length=15, unique=True)
-    fund_type = models.ForeignKey(FundType, on_delete=models.PROTECT)
+    fund_type = models.ForeignKey(FundType, on_delete=models.PROTECT, related_name="funds")
     eligibility = models.ForeignKey(FundEligibility, on_delete=models.PROTECT, related_name="funds")
-    fund_category = models.ForeignKey(FundCategory, on_delete=models.PROTECT)
+    fund_category = models.ForeignKey(FundCategory, on_delete=models.PROTECT, related_name="funds")
     expected_award_no = models.IntegerField()
     eligibility_info = models.TextField()
     description = models.TextField()
@@ -89,11 +104,17 @@ class Fund(models.Model):
     posted_date = models.DateField()
     last_updated_date = models.DateField()
     closing_date = models.DateField()
+    slug = models.SlugField(null=True, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return str(self.title)
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
 
 class Recommendation(models.Model):
