@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from django.conf import settings
+from django.contrib.auth.models import BaseUserManager
 from django.utils.text import slugify
 
 # Create your models here.
@@ -89,6 +90,11 @@ class FundProfile(models.Model):
         super().save(*args, **kwargs)
 
 
+class FundManager(BaseUserManager):
+    def get_queryset(self):
+        return super().get_queryset().prefetch_related("agency", "fund_type", "eligibility", "fund_category").all()
+
+
 class Fund(models.Model):
     title = models.CharField(max_length=255)
     agency = models.ForeignKey(Agency, on_delete=models.PROTECT, related_name="funds")
@@ -108,6 +114,8 @@ class Fund(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     
+    objects = FundManager()
+    
     def __str__(self):
         return str(self.title)
     
@@ -115,6 +123,9 @@ class Fund(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+    
+    def get_absolute_url(self):
+        return reverse("funds:fund", args=(self.slug,))
 
 
 class Recommendation(models.Model):

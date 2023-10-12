@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ block.super }} {{ fund.title }}
+{% endblock %}
+
+{% block content %}
+<div class="m-4 m-md-5">
+    <h3 class="my-3">General information</h3>
+    <div class="border rounded-4">
+        <div class="p-4">
+            <div class="row gy-2">
+                <div class="col-4 text-end fw-bold">Funding Opportunity Number:</div>
+                <div class="col-8">23-630</div>
+                <div class="col-4 text-end fw-bold">Funding Opportunity Title:</div>
+                <div class="col-8">Ethical and Responsible Research</div>
+                <div class="col-4 text-end fw-bold">Funding Instrument Type:</div>
+                <div class="col-8">Grant</div>
+                <div class="col-4 text-end fw-bold">Category of Funding Activity:</div>
+                <div class="col-8">Science and Technology and other Research and Development</div>
+                <div class="col-4 text-end fw-bold">Expected Number of Awards:</div>
+                <div class="col-8">15</div>
+                <div class="col-4 text-end fw-bold">Posted Date:</div>
+                <div class="col-8">Sep 30, 2023</div>
+                <div class="col-4 text-end fw-bold">Closing Date for Applications:</div>
+                <div class="col-8">Jan 25, 2024</div>
+                <div class="col-4 text-end fw-bold">Estimated Total Program Funding:</div>
+                <div class="col-8">	$5,450,000</div>
+            </div>
+        </div>
+    </div>
+    <h3 class="my-3">Eligibility</h3>
+    <div class="border rounded-4">
+        <div class="p-4">
+            <div class="row gy-2">
+                <div class="col-4 text-end fw-bold">Eligible Applicants:</div>
+                <div class="col-8">Others (see text field entitled "Additional Information on Eligibility" for clarification)</div>
+                <div class="col-4 text-end fw-bold">Additional Information on Eligibility:</div>
+                <div class="col-8">	*Who May Submit Proposals: Proposals may only be submitted by the following: -Non-profit, non-academic organizations: Independent museums, observatories, research laboratories, professional societies and similar organizations located in the U.S. that are directly associated with educational or research activities. -Institutions of Higher Education (IHEs) - Two- and four-year IHEs (including community colleges) accredited in, and having a campus located in the US, acting on behalf of their faculty members.Special Instructions for International Branch Campuses of US IHEs: If the proposal includes funding to be provided to an international branch campus of a US institution of higher education (including through use of subawards and consultant arrangements), the proposer must explain the benefit(s) to the project of performance at the international branch campus, and justify why the project activities cannot be performed at the US campus. *Who May Serve as PI: The leadership of project teams must have appropriate expertise. This might include expertise in the STEM domains on which the project focuses, or in ethics, values, evaluation and pedagogy. For an Institutional Transformation Research Project proposal, it is highly recommended that at least one senior member of the submitting organization&rsquo;s administration (for example, the provost, a vice provost, and/or the campus president) serve as the PI or co-PI on the project.</div>
+            </div>
+        </div>
+    </div>
+    <div class="my-4 d-grid gap-2">
+        <a href="#" class="btn btn-lg btn-dark mb-2">Additional information</a>
+        <a href="#" class="btn btn-lg btn-dark">Viable collaborations</a>
+    </div>
+</div>
+{% endblock %}
