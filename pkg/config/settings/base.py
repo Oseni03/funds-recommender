@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "apps.websockets",
     "apps.home",
     "apps.funds",
+    "apps.tools",
     
     # External Apps 
     "channels",
