@@ -22,4 +22,4 @@ class WritingToolForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         print(dir(self))
-        self.fields["profile"].queryset = models.FundProfile.objects.filter(user=self.request.user)
+        self.fields["profile"].queryset = models.FundProfile.objects.filter(user=self.user)

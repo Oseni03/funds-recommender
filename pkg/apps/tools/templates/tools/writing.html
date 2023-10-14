@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}{{ block.super }} Writer {% endblock %}
+
+{% block content %}
+<div class="my-auto mx-4 mx-md-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h1>Writer</h1>
+        </div>
+        <div class="card-body">
+            <form action="." method="post">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    {% render_field form.profile class+="form-control focus-ring focus-ring-dark" placeholder=form.profile.help_text|safe %}
+                </div>
+                
+                <div class="input-group">
+                    {% render_field form.query class+="form-control focus-ring focus-ring-dark" placeholder=form.query.help_text|safe id="query-input" %}
+                    <button class="btn btn-dark" type="submit" id="button-addon2"><i class="bi bi-send"></i></button>
+                </div>
+            </form>
+            <div>
+                <p class="my-3">Not sure where to start?</p>
+                <div class="row row-cols-md-4 g-3 overflow-x-auto">
+                    <div class="col">
+                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">How do i get started with {{ site_name }}?</div>
+                    </div>
+                    <div class="col">
+                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                    </div>
+                    <div class="col">
+                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                    </div>
+                    <div class="col">
+                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                    </div>
+                    <div class="col">
+                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-body-secondary">
+            Powered by OpenAI
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script>
+    $(".col div").click(function () {
+        var faq = $( this ).text();
+        
+        $("#query-input").val(faq);
+        $("form").submit();
+    })
+</script>
+{% endblock %}
