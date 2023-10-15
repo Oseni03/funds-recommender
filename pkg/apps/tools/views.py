@@ -30,6 +30,6 @@ class WriterView(LoginRequiredMixin, View):
             if request.HTMX:
                 return render(request, "tools/partials/_response.html", context)
         else:
-            for error in forms.errors.values():
+            for error in form.errors.values():
                 messages.error(request, error)
         return render(request, self.template_name, context)
