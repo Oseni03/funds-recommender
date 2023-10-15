@@ -10,7 +10,7 @@ def create_profile_summary(sender, instance, created, **kwargs):
     if created:
         texts = instance.objectives + "\n" + instance.project_summary + "\n" + instance.background
         
-        get_profile_summary(texts)
+        get_profile_summary.delay(texts)
 
 
 @receiver(post_save, sender=Fund)
