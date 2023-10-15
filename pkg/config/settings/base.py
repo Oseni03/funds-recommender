@@ -366,6 +366,13 @@ ANTHROPIC_API_KEY = env("ANTHROPIC_API_KEY")
 
 
 #-----------------------------------
+# PINECONE
+#-----------------------------------
+PINECONE_API_KEY = env("PINECONE_API_KEY")
+PINECONE_ENV = env("PINECONE_ENV")
+
+
+#-----------------------------------
 # REDIS DEFINITION 
 #-----------------------------------
 REDIS_URL = f'{env("REDIS_URL", default="redis://127.0.0.1:6379")}/{0}'

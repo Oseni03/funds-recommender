@@ -1,3 +1,4 @@
+import hashid_field
 from django.db import models
 from django.utils.translation import gettext as _
 from django.conf import settings
@@ -66,6 +67,7 @@ class Agency(models.Model):
 
 
 class FundProfile(models.Model):
+    id = hashid_field.HashidAutoField(primary_key=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     matches = models.ManyToManyField("Fund", related_name="profiles", through="Recommendation")
