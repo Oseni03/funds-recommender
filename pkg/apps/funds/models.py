@@ -99,6 +99,7 @@ class FundManager(BaseUserManager):
 
 
 class Fund(models.Model):
+    id = hashid_field.HashidAutoField(primary_key=True)
     title = models.CharField(max_length=255)
     agency = models.ForeignKey(Agency, on_delete=models.PROTECT, related_name="funds")
     opportunity_no = models.CharField(max_length=15, unique=True)

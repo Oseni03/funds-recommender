@@ -1,7 +1,7 @@
 from celery import shared_task
 
 from .models import FundProfile, Fund
-from .utils import get_summary
+from .utils import get_summary, create_doc, store_docs
 
 template = """
 You are a professional grant writer with years of experience. 
@@ -21,6 +21,17 @@ def get_fund_summary(fund_id, texts):
     
     instance.summary = output
     instance.save()
+    
+    doc = create_doc(
+        output, 
+        fund_id=instance.id, 
+        opportunity_no=opportunity_no, 
+        posted_date=posted_date, 
+        last_updated_date=last_updated_date, 
+        closing_date=closing_date
+    )
+    
+    store_docs("funds_index", [doc])
 
 
 @shared_task
@@ -32,3 +43,12 @@ def get_profile_summary(profile_id, texts):
     
     instance.summary = output
     instance.save()
+    
+    doc = create_doc(
+        output, 
+        profile_id=instance.id, 
+        user_id=instance.user.id, 
+        estimated_budget=instance.estimated_budget
+    )
+    
+    store_docs("profiles_index", [doc])
