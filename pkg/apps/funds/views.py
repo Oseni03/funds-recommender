@@ -8,7 +8,7 @@ from .models import Fund
 from .filters import FundFilter
 
 # Create your views here.
-class FundProfileView(FormView):
+class FundProfileView(LoginRequiredMixin, FormView):
     form_class = FundProfileForm
     template_name = "funds/profile.html"
 
@@ -57,5 +57,5 @@ class RecommendationView(LoginRequiredMixin, View):
             page_number = request.GET.get("page")
             context["funds"] = paginator.get_page(page_number)
             context["form"] = filters.form
-            template_name = "funds.html"
+            template_name = "matches.html"
         return render(request, f"funds/{template_name}", context)
