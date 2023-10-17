@@ -131,6 +131,10 @@ class Fund(models.Model):
     
     def get_absolute_url(self):
         return reverse("funds:fund", args=(self.slug,))
+    
+    @property
+    def average_fund_award(self):
+        return self.estimated_total_funding/self.expected_award_no
 
 
 class Recommendation(models.Model):

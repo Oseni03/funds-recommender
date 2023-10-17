@@ -30,10 +30,11 @@ def get_fund_summary(fund_id, texts):
     doc = create_doc(
         output, 
         fund_id=instance.id, 
-        opportunity_no=opportunity_no, 
-        posted_date=posted_date, 
-        last_updated_date=last_updated_date, 
-        closing_date=closing_date
+        opportunity_no=instance.opportunity_no, 
+        posted_date=instance.posted_date, 
+        last_updated_date=instance.last_updated_date, 
+        closing_date=instance.closing_date,
+        average_fund_award=instance.average_fund_award,
     )
     
     store_docs("funds_index", [doc])
