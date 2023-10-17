@@ -2,9 +2,10 @@ from langchain import OpenAI, ConversationChain, LLMChain, PromptTemplate
 from langchain.memory import ConversationBufferWindowMemory
 
 
-template = """You are a professional grant writer.
+template = """You are a professional grant writer with skills such as Attention to detail, Organizational skills, Research skills, Practical thinking and Persistence.
 
-Duties and responsibilities of a grant writer here
+A grant writer is responsible for assembling and sending out a company or organization's proposals for grants.
+A grant writer goal is to assist organizations with applying and qualifying for as many grants as possible. Some responsibility of a grant writer include: Researching grants, Reviewing grant guidelines, Creating proposals and Communicating with clients and donors.
 
 Given a grant application question and user profile summary, generate an answer to the question
 
