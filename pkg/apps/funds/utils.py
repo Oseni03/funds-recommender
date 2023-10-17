@@ -7,6 +7,12 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
 from langchain.chat_models import ChatOpenAI
 from langchain.schema.document import Document
+from langchain.indexes import SQLRecordManager, index
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env(os.path.join(settings.BASE_DIR, '.env'))
 
 import pinecone
 
@@ -49,10 +55,25 @@ def store_docs(index_name, docs):
             dimension=1536  
         )
     
-        vectorstore = Pinecone.from_documents(docs, embeddings, index_name=index_name)
-    else:
-        vectorstore = Pinecone.from_existing_index(index_name, embeddings)
-        vectorstore.add_documents(docs)
+    vectorstore = Pinecone.from_existing_index(index_name, embeddings)
+    
+    # Initialize a record manager with an appropriate namespace
+    namespace = f"pinecone/{index_name}"
+    record_manager = SQLRecordManager(
+        namespace, 
+        db_url=env("DATABASE_URL", default="sqlite:///record_manager_cache.sql")
+    )
+    # Create a schema before using the record manager.
+    
+    record_manager.create_schema()
+    
+    index(
+        docs,
+        record_manager,
+        vectorstore,
+        cleanup="incremental",
+        source_id_key="id",
+    )
     return vectorstore
 
 

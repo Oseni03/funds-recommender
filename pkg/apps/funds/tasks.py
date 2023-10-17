@@ -29,7 +29,7 @@ def get_fund_summary(fund_id, texts):
     
     doc = create_doc(
         output, 
-        fund_id=instance.id, 
+        id=instance.id, # provide an id that can repeat itself in the vectorstore metadata 
         opportunity_no=instance.opportunity_no, 
         posted_date=instance.posted_date, 
         last_updated_date=instance.last_updated_date, 
@@ -52,7 +52,7 @@ def get_profile_summary(profile_id, texts):
     
     doc = create_doc(
         output, 
-        profile_id=instance.id, 
+        id=instance.id, 
         user_id=instance.user.id, 
         estimated_budget=instance.estimated_budget
     )
