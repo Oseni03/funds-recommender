@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ block.super }} Matches
+{% endblock %}
+
+{% block content %}
+<div class="my-4">
+    <h1>Matches</h1>
+    <div class="row g-3 d-flex align-items-center">
+        <div class="col-10">
+            {% include "funds/partials/_funds_table.html" %}
+                        
+            {% with funds as page_obj %}
+                {% include "partials/_pagination.html" %}
+            {% endwith %}
+        </div>
+    </div>
+</div>
+{% endblock %}
