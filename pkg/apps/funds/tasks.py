@@ -5,7 +5,8 @@ from .utils import get_summary, create_doc, store_docs
 
 template = """
 You are a professional grant writer with years of experience. 
-Given the text below, generate a concise summary of the text which can be used to determine grant opportunity match for the specific user without leaving out any detail.
+Given the text below, generate a concise and short summary of the text which can be used to determine grant opportunity match for the specific user without leaving out any detail.
+Remember, do not include any information not mentioned in the text.
 
 {text}
 

@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
 from .forms import WritingToolForm
+# from .utils import get_writer_chain
 
 # Create your views here.
 class WriterView(LoginRequiredMixin, View):
@@ -25,9 +26,17 @@ class WriterView(LoginRequiredMixin, View):
             profile = form.cleaned_data.get("profile")
             query = form.cleaned_data.get("query")
             
-            # generate query response and add to the context to return to the user
+            if "writer_chain" not in request.session:
+                writer_chain = get_writer_chain()
+                request.session["writer_chain"] = writer_chain
+            else:
+                writer_chain = request.session.get("writer_chain")
             
-            if request.HTMX:
+            response = writer_chain.predict(question=query, summary=profile.summary)
+            
+            context["response"] = response
+            
+            if request.htmx:
                 return render(request, "tools/partials/_response.html", context)
         else:
             for error in form.errors.values():

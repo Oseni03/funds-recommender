@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load django_htmx %}
 {% load widget_tweaks %}
 
 {% block title %}{{ block.super }} Writer {% endblock %}
@@ -11,7 +12,7 @@
             <h1>Writer</h1>
         </div>
         <div class="card-body">
-            <form action="." method="post" id="writer-form">
+            <form hx-post="{% url 'tools:writer' %}" hx-target="#response" id="writer-form">
                 {% csrf_token %}
                 
                 <div class="mb-3">
@@ -23,23 +24,25 @@
                     <button class="btn btn-dark" type="submit" id="button-addon2"><i class="bi bi-send"></i></button>
                 </div>
             </form>
-            <div>
-                <p class="my-3">Not sure where to start?</p>
-                <div class="row row-cols-md-4 g-3 overflow-x-auto">
-                    <div class="col">
-                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">How do i get started with {{ site_name }}?</div>
-                    </div>
-                    <div class="col">
-                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
-                    </div>
-                    <div class="col">
-                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
-                    </div>
-                    <div class="col">
-                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
-                    </div>
-                    <div class="col">
-                        <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+            <div id="response" class="border rounded-3 mt-3">
+                <div class="p-2">
+                    <p class="my-3">Not sure where to start?</p>
+                    <div class="row row-cols-md-4 g-3 overflow-x-auto">
+                        <div class="col">
+                            <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">How do i get started with {{ site_name }}?</div>
+                        </div>
+                        <div class="col">
+                            <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                        </div>
+                        <div class="col">
+                            <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                        </div>
+                        <div class="col">
+                            <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                        </div>
+                        <div class="col">
+                            <div id="faq" class="d-inline-flex p-2 bg-body-tertiary">Write a grant proposal?</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,7 +62,11 @@
         var faq = $( this ).text();
         
         $("#query-input").val(faq);
-        $("#writer-form").submit();
+        $("#button-addon2").click();
+    })
+    
+    $("#clipboard-wrapper").one("click", function () {
+        $(this).html('<i class="bi bi-clipboard-check"></i>');
     })
 </script>
 {% endblock %}
