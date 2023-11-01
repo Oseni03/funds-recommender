@@ -3,6 +3,7 @@ from django.views.generic import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
+from apps.funds.models import FundProfile
 from .forms import WritingToolForm
 # from .utils import get_writer_chain
 
@@ -23,16 +24,28 @@ class WriterView(LoginRequiredMixin, View):
             "form": form,
         }
         if form.is_valid():
-            profile = form.cleaned_data.get("profile")
-            query = form.cleaned_data.get("query")
+            profile_id = form.cleaned_data.get("profile")
+            question = form.cleaned_data.get("question")
+            style = form.cleaned_data.get("style")
+            add_profile_summary = form.cleaned_data.get("add_profile_summary")
             
-            if "writer_chain" not in request.session:
-                writer_chain = get_writer_chain()
-                request.session["writer_chain"] = writer_chain
+            profile = get_object_or_404(FundProfile, id=profile_id, user=request.user)
+            
+            writer_chain = get_writer_chain(add_profile_summary)
+            
+            if add_profile_summary:
+                response = writer_chain.predict(
+                    question=question, 
+                    formatted_tone=form.formatted_tones, 
+                    writing_style=style, 
+                    summary=profile.summary
+                )
             else:
-                writer_chain = request.session.get("writer_chain")
-            
-            response = writer_chain.predict(question=query, summary=profile.summary)
+                response = writer_chain.predict(
+                    question=question, 
+                    formatted_tone=form.formatted_tones, 
+                    writing_style=style
+                )
             
             context["response"] = response
             
