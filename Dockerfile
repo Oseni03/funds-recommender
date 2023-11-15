@@ -2,14 +2,12 @@ FROM python:3.10
 
 ENV PYTHONUNBUFFERED=1
 
-RUN mkdir /code
+WORKDIR /app
 
-WORKDIR /code
-
-ADD . /code
+COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8000
+COPY . .
 
-CMD python pkg/manage.py runserver
+CMD [ "python", "pkg/manage.py", "runserver", "0.0.0.0:8000" ]
