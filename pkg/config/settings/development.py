@@ -4,8 +4,12 @@ from .base import *
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': env('DATABASE_ENGINE'),
+            'NAME': env('DATABASE_NAME'),
+            'USER': env('DATABASE_USER'),
+            'PASSWORD': env('DATABASE_PASSWORD'),
+            'HOST': env('DATABASE_HOST'),
+            'PORT': env('DATABASE_PORT'),
         }
     }
     
@@ -50,11 +54,23 @@ if DEVELOPMENT_MODE is True:
     }
 else:
     if len(sys.argv) > 0 and sys.argv[1] != "collectstatic":
-        if env("DATABASE_URL", default="") is None:
-            raise Exception("DATABASE_URL environment not defined")
-        DATABASES = {
-            "default": dj_database_url.parse(env("DATABASE_URL"))
-        }
+        if env("DATABASE_URL", default=""):
+            DATABASES = {
+                "default": dj_database_url.parse(env("DATABASE_URL"))
+            }
+        elif env('DATABASE_USER') and env('DATABASE_PASSWORD'):
+            DATABASES = {
+                'default': {
+                    'ENGINE': env('DATABASE_ENGINE'),
+                    'NAME': env('DATABASE_NAME'),
+                    'USER': env('DATABASE_USER'),
+                    'PASSWORD': env('DATABASE_PASSWORD'),
+                    'HOST': env('DATABASE_HOST'),
+                    'PORT': env('DATABASE_PORT'),
+                }
+            }
+        else:
+            raise Exception('DATABASE NOT DEFINED!')
     
     EMAIL_BACKEND = "django_ses.SESBackend"
     
@@ -79,15 +95,4 @@ else:
     AWS_CLOUDFRONT_KEY = os.environ.get('AWS_CLOUDFRONT_KEY', '').encode('ascii')
     AWS_CLOUDFRONT_KEY_ID = os.environ.get('AWS_CLOUDFRONT_KEY_ID', None)
     
-    
-    # REDIS setup
-    
-    CHANNEL_LAYERS = {
-        "default": {
-            "BACKEND": "channels_redis.core.RedisChannelLayer",
-            "CONFIG": {
-                "hosts": [REDIS_URL],
-            },
-        },
-    }
 

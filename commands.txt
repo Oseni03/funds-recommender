@@ -1,3 +1,8 @@
+python venv venv
+source venv/bin/activate
 docker-compose build
-docker-compose run --publish 8000:8000 app
+docker-compose run --publish 8000:8000 --rm app
 docker-compose up
+
+----------------------------------------------------------------------------------------
+docker exec -it django-recommender-container sh

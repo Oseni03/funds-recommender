@@ -375,7 +375,7 @@ PINECONE_ENV = env("PINECONE_ENV")
 #-----------------------------------
 # REDIS DEFINITION 
 #-----------------------------------
-REDIS_URL = f'{env("REDIS_URL", default="redis://127.0.0.1:6379")}/{0}'
+REDIS_URL = f'{env("REDIS_URL", default="redis://redis:6379")}/{0}'
 
 #-----------------------------------
 # CELERY DEFINITION 
@@ -387,3 +387,13 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 # this allows you to schedule items in the Django admin.
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [REDIS_URL],
+        },
+    },
+}
