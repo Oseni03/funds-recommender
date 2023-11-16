@@ -1,3 +1,3 @@
-docker build --tag grants-recommender .
-docker run --publish 8000:8000 grants-recommender
-docker-compose up -d
+docker-compose build
+docker-compose run --publish 8000:8000 app
+docker-compose up

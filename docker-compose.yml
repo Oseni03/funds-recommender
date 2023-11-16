@@ -1,9 +1,19 @@
 # Copyright VMware, Inc.
 # SPDX-License-Identifier: APACHE-2.0
 
-version: '2'
+version: '3.8'
 
 services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    image: app:grants-recommender
+    container_name: django-recommender-container
+    command: python pkg/manage.py runserver 0.0.0.0:8000
+
   redis:
     image: docker.io/bitnami/redis:7.2
     environment:
