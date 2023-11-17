@@ -1,0 +1,610 @@
+[
+    {
+        "id": "351027",
+        "number": "72069524RFA00001",
+        "title": "Mpore (Be well)",
+        "agencyCode": "USAID-BUR",
+        "agency": "Burundi USAID-Bujumbura",
+        "openDate": "11/17/2023",
+        "closeDate": "01/08/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "98.001"
+        ]
+    },
+    {
+        "id": "351028",
+        "number": "W81EWF-24-SOI-0006",
+        "title": "National Information Collaboration on Ecohydraulics (NICE): Acoustic Tracking of Fish",
+        "agencyCode": "DOD-COE-ERDC",
+        "agency": "Engineer Research and Development Center",
+        "openDate": "11/17/2023",
+        "closeDate": "01/18/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "12.630"
+        ]
+    },
+    {
+        "id": "351026",
+        "number": "4216-24-002",
+        "title": "Malta - Academy for Women Entrepreneurs 2024",
+        "agencyCode": "DOS-MLT",
+        "agency": "U.S. Mission to Malta",
+        "openDate": "11/17/2023",
+        "closeDate": "12/22/2023",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "19.040"
+        ]
+    },
+    {
+        "id": "351029",
+        "number": "DE-FOA-0003218",
+        "title": "Notice of Intent to Issue FOA - DE-FOA-0003219: FY24 Energy and Emissions Intensive Industries",
+        "agencyCode": "DOE-GFO",
+        "agency": "Golden Field Office",
+        "openDate": "11/17/2023",
+        "closeDate": "04/15/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "81.086"
+        ]
+    },
+    {
+        "id": "351030",
+        "number": "DE-FOA-0003206",
+        "title": "Industrial Efficiency and Decarbonization Office (IEDO) Fiscal Year 2024 Cross-Sector Technologies FOA",
+        "agencyCode": "DOE-GFO",
+        "agency": "Golden Field Office",
+        "openDate": "11/17/2023",
+        "closeDate": "03/20/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "81.086"
+        ]
+    },
+    {
+        "id": "351032",
+        "number": "EPA-REG4-WPDG-23-01",
+        "title": "R4 Fiscal Year 2023 and 2024 Wetland Program Development Grants",
+        "agencyCode": "EPA",
+        "agency": "Environmental Protection Agency",
+        "openDate": "11/17/2023",
+        "closeDate": "01/12/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "66.461"
+        ]
+    },
+    {
+        "id": "351035",
+        "number": "SFOP0010132",
+        "title": "FY 2024 National Security Language Initiative for Youth (NSLI-Y) Program",
+        "agencyCode": "DOS-ECA",
+        "agency": "Bureau Of Educational and Cultural Affairs",
+        "openDate": "11/17/2023",
+        "closeDate": "01/26/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "19.415"
+        ]
+    },
+    {
+        "id": "351034",
+        "number": "EPA-R-OAR-HFC-24-01",
+        "title": "Hydrofluorocarbon Reclaim and Innovative Destruction Grants",
+        "agencyCode": "EPA",
+        "agency": "Environmental Protection Agency",
+        "openDate": "11/17/2023",
+        "closeDate": "02/16/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "66.047"
+        ]
+    },
+    {
+        "id": "351015",
+        "number": "24-508",
+        "title": "EMERGING FRONTIERS IN RESEARCH AND INNOVATION (EFRI): Biocomputing through EnGINeering Organoid Intelligence (BEGIN OI)",
+        "agencyCode": "NSF",
+        "agency": "National Science Foundation",
+        "openDate": "11/16/2023",
+        "closeDate": "02/22/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "47.041",
+            "47.070",
+            "47.075",
+            "47.049",
+            "47.074"
+        ]
+    },
+    {
+        "id": "349644",
+        "number": "CMS-4S4-24-001",
+        "title": "States Advancing All-Payer Health Equity Approaches and Development (AHEAD) Model",
+        "agencyCode": "HHS-CMS",
+        "agency": "Centers for Medicare & Medicaid Services",
+        "openDate": "11/16/2023",
+        "closeDate": "03/18/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "93.968"
+        ]
+    },
+    {
+        "id": "351018",
+        "number": "USDA-NIFA-NLGCA-010248",
+        "title": "Capacity Building Grants for Non-Land Grant Colleges of Agriculture Program",
+        "agencyCode": "USDA-NIFA",
+        "agency": "National Institute of Food and Agriculture",
+        "openDate": "11/16/2023",
+        "closeDate": "01/16/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "10.326"
+        ]
+    },
+    {
+        "id": "351010",
+        "number": "ED-GRANTS-111623-001",
+        "title": "OSERS: OSEP: Personnel Development to Improve Services and Results for Children with Disabilities--Preparation of Related Services Personnel Serving Children with Disabilities who have High-Intensity Needs, Assistance Listing Number (ALN) 84.325R",
+        "agencyCode": "ED",
+        "agency": "Department of Education",
+        "openDate": "11/16/2023",
+        "closeDate": "01/16/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "84.325"
+        ]
+    },
+    {
+        "id": "351014",
+        "number": "USDA-FS-UCF-010-2024",
+        "title": "2024 National Urban and Community Forestry Challenge Cost Share Grant Program",
+        "agencyCode": "USDA-FS",
+        "agency": "Forest Service",
+        "openDate": "11/16/2023",
+        "closeDate": "02/29/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "10.675"
+        ]
+    },
+    {
+        "id": "350906",
+        "number": "USDA-FS-2024-COHESIVE-STRATEGY",
+        "title": "Forest Service Cohesive Wildland Fire Management Strategy RFA 2024",
+        "agencyCode": "USDA-FS",
+        "agency": "Forest Service",
+        "openDate": "11/16/2023",
+        "closeDate": "01/16/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "10.697",
+            "10.698"
+        ]
+    },
+    {
+        "id": "351021",
+        "number": "NEAPS2403",
+        "title": "NEA Big Read Program Solicitation, FY2024",
+        "agencyCode": "NEA",
+        "agency": "National Endowment for the Arts",
+        "openDate": "11/16/2023",
+        "closeDate": "01/18/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "45.024"
+        ]
+    },
+    {
+        "id": "351020",
+        "number": "NEAPS2402",
+        "title": "NEA Shakespeare in American Communities, FY2024",
+        "agencyCode": "NEA",
+        "agency": "National Endowment for the Arts",
+        "openDate": "11/16/2023",
+        "closeDate": "01/18/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "45.024"
+        ]
+    },
+    {
+        "id": "351019",
+        "number": "NEAPS2401",
+        "title": "NEA Creative Placemaking Technical Assistance Program, FY2024",
+        "agencyCode": "NEA",
+        "agency": "National Endowment for the Arts",
+        "openDate": "11/16/2023",
+        "closeDate": "01/18/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "45.024"
+        ]
+    },
+    {
+        "id": "351022",
+        "number": "SFOP0010130",
+        "title": "Official U.S. Presentation at the 19th International Architecture Biennale",
+        "agencyCode": "DOS-ECA",
+        "agency": "Bureau Of Educational and Cultural Affairs",
+        "openDate": "11/16/2023",
+        "closeDate": "01/17/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "19.415"
+        ]
+    },
+    {
+        "id": "350955",
+        "number": "EAC-23-001",
+        "title": "Help America Vote College Program Poll Worker Grant Program",
+        "agencyCode": "USEAC",
+        "agency": "Election Assistance Commission",
+        "openDate": "11/16/2023",
+        "closeDate": "12/18/2023",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "90.400"
+        ]
+    },
+    {
+        "id": "350956",
+        "number": "EAC-23-002",
+        "title": "Help America Vote College Program Service Day Mini-Grant Program",
+        "agencyCode": "USEAC",
+        "agency": "Election Assistance Commission",
+        "openDate": "11/16/2023",
+        "closeDate": "12/18/2023",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "90.400"
+        ]
+    },
+    {
+        "id": "351023",
+        "number": "W81EWF-24-SOI-0004",
+        "title": "National Information Collaboration on Ecohydraulics (NICE): Numerical Models for Fish",
+        "agencyCode": "DOD-COE",
+        "agency": "Dept. of the Army  --  Corps of Engineers",
+        "openDate": "11/16/2023",
+        "closeDate": "01/19/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "12.630"
+        ]
+    },
+    {
+        "id": "351024",
+        "number": "PAS-NEWZEALAND-2024-02",
+        "title": "Academy for Women Entrepreneurs &ndash; Pacific Region",
+        "agencyCode": "DOS-NZL",
+        "agency": "U.S. Mission to New Zealand",
+        "openDate": "11/16/2023",
+        "closeDate": "12/18/2023",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "19.040"
+        ]
+    },
+    {
+        "id": "351025",
+        "number": "DE-FOA-0003103",
+        "title": "Strategies to Increase Hydropower Flexibility",
+        "agencyCode": "DOE-GFO",
+        "agency": "Golden Field Office",
+        "openDate": "11/16/2023",
+        "closeDate": "04/11/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "81.087"
+        ]
+    },
+    {
+        "id": "350973",
+        "number": "PAS-SVK-FY2024-01",
+        "title": "U.S. Embassy Bratislava PAS Annual Program Statement",
+        "agencyCode": "DOS-SVK",
+        "agency": "U.S. Mission to Slovakia ",
+        "openDate": "11/15/2023",
+        "closeDate": "06/17/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "19.040"
+        ]
+    },
+    {
+        "id": "350986",
+        "number": "DE-FOA-0003099",
+        "title": "Bipartisan Infrastructure Law (BIL) Battery Materials Processing and Battery Manufacturing",
+        "agencyCode": "DOE-NETL",
+        "agency": "National Energy Technology Laboratory",
+        "openDate": "11/15/2023",
+        "closeDate": "03/19/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "81.253"
+        ]
+    },
+    {
+        "id": "350828",
+        "number": "FOA-ETA-24-36",
+        "title": "YouthBuild",
+        "agencyCode": "DOL-ETA",
+        "agency": "Employment and Training Administration",
+        "openDate": "11/15/2023",
+        "closeDate": "02/01/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "17.274"
+        ]
+    },
+    {
+        "id": "350988",
+        "number": "FTA-2024-006-TPM-ICAM",
+        "title": "FY 2024 Competitive Funding Opportunity: Innovative Coordinated Access and Mobility Pilot Program",
+        "agencyCode": "DOT-FTA",
+        "agency": "DOT/Federal Transit Administration",
+        "openDate": "11/15/2023",
+        "closeDate": "02/13/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "20.513"
+        ]
+    },
+    {
+        "id": "350991",
+        "number": "ED-GRANTS-111523-001",
+        "title": "Office of Elementary and Secondary Education (OESE): Rural, Insular, and Native Achievement Programs:: Alaska Native Education Program, Assistance Listing Number (ALN) 84.356A",
+        "agencyCode": "ED",
+        "agency": "Department of Education",
+        "openDate": "11/15/2023",
+        "closeDate": "02/13/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "84.356"
+        ]
+    },
+    {
+        "id": "351003",
+        "number": "USDA-FNS-OPS-PHRAMM-24",
+        "title": "FY24 Participation in WIC &amp; Prevalence of Health Risks Associated with Maternal Mortality",
+        "agencyCode": "USDA-FNS1",
+        "agency": "Food and Nutrition Service",
+        "openDate": "11/15/2023",
+        "closeDate": "02/14/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "10.557"
+        ]
+    },
+    {
+        "id": "351001",
+        "number": "L24AS00115",
+        "title": "FY24 IIJA/IRA Bureau of Land Management MT/DAK Cultural and Paleontology Resource Management",
+        "agencyCode": "DOI-BLM",
+        "agency": "Bureau of Land Management",
+        "openDate": "11/15/2023",
+        "closeDate": "01/15/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "15.224"
+        ]
+    },
+    {
+        "id": "351000",
+        "number": "L24AS00121",
+        "title": "FY24 IIJA/IRA Bureau of Land Management Montana/Dakotas (MT/DAK) Environmental Quality Protection Program",
+        "agencyCode": "DOI-BLM",
+        "agency": "Bureau of Land Management",
+        "openDate": "11/15/2023",
+        "closeDate": "01/15/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "15.236"
+        ]
+    },
+    {
+        "id": "350996",
+        "number": "P24AS00178",
+        "title": "2024 Preservation Technology and Training Grants",
+        "agencyCode": "DOI-NPS",
+        "agency": "National Park Service",
+        "openDate": "11/15/2023",
+        "closeDate": "01/16/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "15.923"
+        ]
+    },
+    {
+        "id": "350994",
+        "number": "W81EWF-24-SOI-0005",
+        "title": "Natural Resources &amp; Endangered Species Research &amp; Support at Ft. Hood, TX",
+        "agencyCode": "DOD-COE-ERDC",
+        "agency": "Engineer Research and Development Center",
+        "openDate": "11/15/2023",
+        "closeDate": "01/15/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "12.630"
+        ]
+    },
+    {
+        "id": "350997",
+        "number": "7200AA24RFA00004",
+        "title": "RFI/SSN - FTF FORK",
+        "agencyCode": "USAID",
+        "agency": "Agency for International Development",
+        "openDate": "11/15/2023",
+        "closeDate": "",
+        "oppStatus": "forecasted",
+        "docType": "forecast",
+        "cfdaList": [
+            "98.001"
+        ]
+    },
+    {
+        "id": "350998",
+        "number": "CMS-2M2-24-001",
+        "title": "State Grants for the Implementation, Enhancement, and Expansion of Medicaid and CHIP SBS",
+        "agencyCode": "HHS-CMS",
+        "agency": "Centers for Medicare & Medicaid Services",
+        "openDate": "11/15/2023",
+        "closeDate": "",
+        "oppStatus": "forecasted",
+        "docType": "forecast",
+        "cfdaList": [
+            "93.771"
+        ]
+    },
+    {
+        "id": "350553",
+        "number": "RFA-PS-24-063",
+        "title": "Minority HIV Research Initiative (MARI): Epidemiologic, Behavioral, and Implementation Science Research in Racial/Ethnic Minority Communities Disproportionately Affected by HIV and Build Research Capacity Among Historically Underrepresented Researchers",
+        "agencyCode": "HHS-CDC-HHSCDCERA",
+        "agency": "Centers for Disease Control and Prevention - ERA",
+        "openDate": "11/15/2023",
+        "closeDate": "01/16/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "93.941",
+            "93.943"
+        ]
+    },
+    {
+        "id": "351004",
+        "number": "L24AS00116",
+        "title": "FY24 IIJA/IRA Bureau of Land Management Montana/Dakotas (MT/DAK) Recreation and Visitor Services Program",
+        "agencyCode": "DOI-BLM",
+        "agency": "Bureau of Land Management",
+        "openDate": "11/15/2023",
+        "closeDate": "01/15/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "15.225"
+        ]
+    },
+    {
+        "id": "351005",
+        "number": "PAR-24-061",
+        "title": "Nursing Research Education Program in Firearm Injury Prevention Research: Short Courses (R25 Independent Clinical Trial Not Allowed)",
+        "agencyCode": "HHS-NIH11",
+        "agency": "National Institutes of Health",
+        "openDate": "11/15/2023",
+        "closeDate": "05/25/2026",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "93.361"
+        ]
+    },
+    {
+        "id": "351011",
+        "number": "DE-FOA-0003180",
+        "title": "DNN R&amp;D UNIVERSITY PROGRAM: CONSORTIA FOR NUCLEAR NONPROLIFERATION",
+        "agencyCode": "DOE-NNSA",
+        "agency": "NNSA",
+        "openDate": "11/15/2023",
+        "closeDate": "02/06/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "81.113"
+        ]
+    },
+    {
+        "id": "348751",
+        "number": "RFA-DP-24-031",
+        "title": "Epidemiologic Cohort Study of Interstitial Cystitis",
+        "agencyCode": "HHS-CDC-HHSCDCERA",
+        "agency": "Centers for Disease Control and Prevention - ERA",
+        "openDate": "11/15/2023",
+        "closeDate": "02/09/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "93.945"
+        ]
+    },
+    {
+        "id": "351009",
+        "number": "USDA-FNS-MMMWS-24",
+        "title": "Recognizing &amp; Addressing MMM Warning Signs",
+        "agencyCode": "USDA-FNS1",
+        "agency": "Food and Nutrition Service",
+        "openDate": "11/15/2023",
+        "closeDate": "02/14/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "10.557"
+        ]
+    },
+    {
+        "id": "351007",
+        "number": "D24AS00098",
+        "title": "Kapapahuliau Native Hawaiian Climate Resilience Program",
+        "agencyCode": "DOI-IBC",
+        "agency": "Interior Business Ceter",
+        "openDate": "11/15/2023",
+        "closeDate": "02/29/2024",
+        "oppStatus": "posted",
+        "docType": "synopsis",
+        "cfdaList": [
+            "15.098"
+        ]
+    },
+    {
+        "id": "351008",
+        "number": "CDC-RFA-PS-24-0121",
+        "title": "Secure Data Sharing Tool to Support Deduplication of Cases in the National HIV Surveillance System",
+        "agencyCode": "HHS-CDC-NCHHSTP",
+        "agency": "Centers for Disease Control - NCHHSTP",
+        "openDate": "11/15/2023",
+        "closeDate": "",
+        "oppStatus": "forecasted",
+        "docType": "forecast",
+        "cfdaList": [
+            "93.940"
+        ]
+    }
+]

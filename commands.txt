@@ -1,6 +1,6 @@
 source venv/bin/activate
 docker-compose build
-docker-compose run --publish 8000:8000 --rm app
+docker-compose run app
 docker-compose up
 
 ----------------------------------------------------------------------------------------
