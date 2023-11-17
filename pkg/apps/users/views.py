@@ -27,9 +27,9 @@ from .services import otp as otp_services
 @method_decorator(rate_limit(action="login"), name="dispatch")
 class LoginView(FormView):
     form_class = forms.UserLoginForm
-    template_name = "users/login.html" 
+    template_name = "users/login.html"
     success_url = reverse_lazy("users:profile")
-    
+
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -37,13 +37,13 @@ class LoginView(FormView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
-        
+
     def form_valid(self, form):
         password = form.cleaned_data["password"]
         email = form.cleaned_data["email"]
-        
+
         user = authenticate(username=email, password=password)
-        
+
         if user is not None:
             if user.is_active:
                 if user.otp_enabled and user.otp_verified:
@@ -55,7 +55,9 @@ class LoginView(FormView):
                     login(self.request, user)
                     messages.success(self.request, "Login successful!")
             else:
-                messages.info(self.request, "Check your emaill to activate your account!")
+                messages.info(
+                    self.request, "Check your emaill to activate your account!"
+                )
         else:
             messages.error(self.request, "Invalid credentials")
         return super().form_valid(form)
@@ -68,9 +70,10 @@ class LogoutView(LoginRequiredMixin, View):
 
 
 class UserProfileView(LoginRequiredMixin, View):
-    
     def get(self, request, *args, **kwargs):
-        profile = models.UserProfile.objects.prefetch_related("user", "avatar").get(user=request.user)
+        profile = models.UserProfile.objects.prefetch_related("user", "avatar").get(
+            user=request.user
+        )
         profile_data = {
             "first_name": profile.first_name,
             "last_name": profile.last_name,
@@ -78,7 +81,7 @@ class UserProfileView(LoginRequiredMixin, View):
             "avatar": profile.avatar,
         }
         context = {
-            "profile": profile, 
+            "profile": profile,
             "profile_form": forms.UserProfileForm(initial=profile_data),
             "password_change_form": forms.UserAccountChangePasswordForm(request.user),
         }
@@ -87,16 +90,18 @@ class UserProfileView(LoginRequiredMixin, View):
         else:
             context["subscription"] = False
         return render(request, "users/profile.html", context)
-    
+
     def post(self, request, *args, **kwargs):
-        profile = models.UserProfile.objects.prefetch_related("user", "avatar").get(user=request.user)
+        profile = models.UserProfile.objects.prefetch_related("user", "avatar").get(
+            user=request.user
+        )
         profile_data = {
             "first_name": profile.first_name,
             "last_name": profile.last_name,
             # "email": request.user.email,
             "avatar": profile.avatar,
         }
-        
+
         update_form = forms.UserProfileForm(request.POST, initial=profile_data)
         if update_form.has_changed():
             if update_form.is_valid():
@@ -108,15 +113,17 @@ class UserProfileView(LoginRequiredMixin, View):
             else:
                 for error in update_form.errors.values():
                     messages.error(request, error)
-        
+
         context = {
-            "profile": profile, 
+            "profile": profile,
             "profile_form": update_form,
             "password_change_form": forms.UserAccountChangePasswordForm(request.user),
         }
-        
+
         if request.POST.get("new_password1"):
-            password_change_form = forms.UserAccountChangePasswordForm(user=request.user, data=request.POST)
+            password_change_form = forms.UserAccountChangePasswordForm(
+                user=request.user, data=request.POST
+            )
             if password_change_form.is_valid():
                 password_change_form.save()
                 utils.logout_on_password_change(request, request.user)
@@ -132,9 +139,9 @@ class UserProfileView(LoginRequiredMixin, View):
 @method_decorator(rate_limit(action="signup"), name="dispatch")
 class SignUpView(FormView):
     form_class = forms.UserSignupForm
-    template_name = "users/signup.html" 
+    template_name = "users/signup.html"
     success_url = reverse_lazy("users:login")
-    
+
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -142,9 +149,9 @@ class SignUpView(FormView):
             return self.form_valid(form)
         else:
             for error in form.errors.values():
-                messages.error(request, error) 
+                messages.error(request, error)
             return self.form_invalid(form)
-        
+
     def form_valid(self, form):
         form.save()
         messages.info(self.request, "Confirm your email to activate your account")
@@ -156,19 +163,19 @@ def account_confirmation(request, user, token):
     if form.is_valid():
         form.save()
         messages.success(request, "Account verification successful!")
-        return redirect(reverse('users:profile'))
+        return redirect(reverse("users:profile"))
     for error in form.errors.values():
         messages.error(request, error)
-    return redirect(reverse('users:login'))
+    return redirect(reverse("users:login"))
 
 
 @method_decorator(rate_limit(action="reset_password"), name="dispatch")
 @method_decorator(decorators.authentication_not_required, name="dispatch")
 class PasswordResetView(FormView):
     form_class = forms.PasswordResetForm
-    template_name = "users/password_reset.html" 
-    success_url = reverse_lazy("users:login") 
-    
+    template_name = "users/password_reset.html"
+    success_url = reverse_lazy("users:login")
+
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -176,9 +183,9 @@ class PasswordResetView(FormView):
             return self.form_valid(form)
         else:
             for error in form.errors.values():
-                messages.error(request, error) 
+                messages.error(request, error)
             return self.form_invalid(form)
-    
+
     def form_valid(self, form):
         r429 = ratelimit.consume_or_429(
             self.request,
@@ -188,13 +195,16 @@ class PasswordResetView(FormView):
         if r429:
             return r429
         form.save()
-        messages.info(self.request, "Email has been sent your email with instructions to reset your password")
+        messages.info(
+            self.request,
+            "Email has been sent your email with instructions to reset your password",
+        )
         return super(PasswordResetView, self).form_valid(form)
 
 
 def password_reset_confirm(request, user, token):
     user = get_object_or_404(models.User, id=user)
-    
+
     if not tokens.password_reset_token.check_token(user, token):
         messages.error(request, "Malformed password reset token")
         return redirect("users:password_reset")
@@ -220,23 +230,23 @@ class GenerateOTP(LoginRequiredMixin, FormView):
     """
     Enabling two-factor authentication with authentication app
     """
-    
+
     form_class = forms.VerifyOTPForm
-    template_name = "users/generate_otp.html" 
-    success_url = reverse_lazy("users:profile") 
-    
+    template_name = "users/generate_otp.html"
+    success_url = reverse_lazy("users:profile")
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        
+
         otp_base32, otp_auth_url = otp_services.generate_otp(self.request.user)
         qrcode_img_path, img_name = get_qrcode_path(self.request.user.id.hashid)
         print(otp_auth_url)
         qrcode.make(otp_auth_url).save(qrcode_img_path)
-        
+
         context["img_name"] = img_name
         context["otp_auth_url"] = otp_auth_url
         return context
-    
+
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -246,20 +256,20 @@ class GenerateOTP(LoginRequiredMixin, FormView):
             for error in form.errors.values():
                 messages.error(request, error)
             return self.form_invalid(form)
-        
+
     def form_valid(self, form):
         return super().form_valid(form)
 
 
 class ValidateOTP(FormView):
     """
-        2FA Authentication 
+    2FA Authentication
     """
-    
+
     form_class = forms.ValidateOTPForm
-    template_name = "users/validate_otp.html" 
-    success_url = reverse_lazy("users:profile") 
-    
+    template_name = "users/validate_otp.html"
+    success_url = reverse_lazy("users:profile")
+
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -269,7 +279,7 @@ class ValidateOTP(FormView):
             for error in form.errors.values():
                 messages.error(request, error)
             return self.form_invalid(form)
-        
+
     def form_valid(self, form):
         login(self.request, user)
         messages.success(self.request, "Login successful!")

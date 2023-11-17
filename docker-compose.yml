@@ -33,16 +33,16 @@ services:
     ports:
       - 8000:8000
     image: app:grants-recommender
-    container_name: django-recommender-container
+    container_name: django
     command: python pkg/manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
+      - redis
   
   celery:
     restart: always
-    build:
-      context: .
-    command: celery --workdir pkg -A config worker --beat --loglevel=INFO
+    build: .
+    command: celery --app=pkg/config worker --beat --loglevel=INFO
     volumes:
       - .:/django
     container_name: celery
@@ -52,5 +52,4 @@ services:
       - app
 
 volumes:
-  redis_data:
-    driver: local
+  db:
