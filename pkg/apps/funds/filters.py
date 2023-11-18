@@ -2,12 +2,12 @@ import django_filters
 from . import models
 
 
-def fund_types(request):
-    return models.FundType.objects.all()
+def applicant_types(request):
+    return models.ApplicantType.objects.all()
 
 
-def fund_categories(request):
-    return models.FundCategory.objects.all()
+def opportunity_categories(request):
+    return models.OpportunityCategory.objects.all()
 
 
 def eligibilities(request):
@@ -17,10 +17,10 @@ def eligibilities(request):
 class FundFilter(django_filters.FilterSet):
     title = django_filters.CharFilter(lookup_expr='icontains')
     agency = django_filters.CharFilter(lookup_expr='icontains')
-    fund_type = django_filters.ModelMultipleChoiceFilter(queryset=fund_types)
-    fund_category = django_filters.ModelMultipleChoiceFilter(queryset=fund_categories)
+    applicant_type = django_filters.ModelMultipleChoiceFilter(queryset=applicant_types)
+    opportunity_category = django_filters.ModelMultipleChoiceFilter(queryset=opportunity_categories)
     eligibility = django_filters.ModelMultipleChoiceFilter(queryset=eligibilities)
     
     class Meta:
         model = models.Fund
-        fields = ["title", "agency", "fund_type", "fund_category", "eligibility"]
+        fields = ["title", "agency", "applicant_type", "opportunity_category", "eligibility"]
