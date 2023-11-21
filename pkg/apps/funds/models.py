@@ -118,18 +118,16 @@ class Synopsis(models.Model):
     posting_date = models.DateTimeField()
     archive_date = models.DateTimeField()
     cost_sharing = models.BooleanField()
-    award_ceiling = models.CharField(max_length=100)
+    award_ceiling = models.BigIntegerField()
     award_ceiling_formatted = models.CharField(max_length=100)
-    award_floor = models.CharField(max_length=100)
+    award_floor = models.BigIntegerField()
     award_floor_formatted = models.CharField(max_length=100)
     applicant_eligibilty_desc = models.CharField(max_length=255)
     created_date = models.DateTimeField()
     updated_date = models.DateTimeField()
 
-    applicant_type = models.ForeignKey("ApplicantType", on_delete=models.PROTECT)
-    funding_instruement = models.ForeignKey(
-        "FundingInstrument", on_delete=models.PROTECT
-    )
+    applicant_types = models.ManyToManyField("ApplicantType")
+    funding_instruements = models.ManyToManyField("FundingInstrument")
     funding_activity_categories = models.ManyToManyField(
         "FundingActivityCategory", related_name="synopsis"
     )
