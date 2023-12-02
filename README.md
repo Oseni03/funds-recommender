@@ -1,2 +1,2 @@
-# Fundss recommender
+# Funds recommender
 
