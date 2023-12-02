@@ -1,2 +1,2 @@
-# Grants recommender
+# Fundss recommender
 
